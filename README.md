@@ -1,37 +1,16 @@
-## Welcome to GitHub Pages
+## 欢迎来到我的第一个GitHub项目
 
-You can use the [editor on GitHub](https://github.com/Thinsoul324/resume.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+  这个项目主要是为了展示我通过学习*JavaScript*&*jQuery*所制作的在线简历
+>index.html    
+ 是简历模板文件
+>>resume    
+ 该文件夹内存放所需样式文件等
+>>>resume/test.html
+ 这个有我在学习*JavaScript*&*jQuery*时所做的练习，里面的注释解释了我对学习上难点的理解
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+ 希望对你有所帮助。
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Thinsoul324/resume.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* * *
+## 学习资料
+  [小甲鱼翻译的JavaScript教程](https://www.bilibili.com/video/BV17b41137yx?p=1)[^from bilibili]
