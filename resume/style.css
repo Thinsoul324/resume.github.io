@@ -1,20 +1,3 @@
-ul {
-    margin-top:5%;
-    margin-left: 5%;
-  }
-  img{
-    width: 200px;
-    margin-left: 5%;
-  }
-  .hide{
-    display: none;
-  }
-  li input{
-      display: none;
-  }
-  li.edit span{
-    display: none;
-  }
-  li.edit input{
-      display: initial;
-  }
+body .container{
+  margin: 10px 10px;
+}

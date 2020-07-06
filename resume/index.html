@@ -1,77 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=">
     <title>Listener study</title>
     <link rel="stylesheet" href="style.css">
+    <!-- 最新版本的 Bootstrap 3 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
-    <div><input type="text" id="numOne">+<input type="text" id="numTwo">
-        <p id="sum"></p>
+    <div class="container">
+        <div class="row">
+
+            <button type="button" id="left" class="btn btn-default col-md-4">#Left</button>
+            <button type="button" id="middle" class="btn btn-default col-md-4">#Middle</button>
+            <button type="button" id="right" class="btn btn-default col-md-4">#Right</button>
+
+        </div>
     </div>
-    <ul>
-        <li><a href="#" id="one" data-img="one-pic">One</a></li>
-        <li><a href="#" id="two" data-img="two-pic">Two</a></li>
-        <li><a href="#" id="three" data-img="three-pic">Three</a></li>
-    </ul>
-    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1599031932,279074810&fm=26&gp=0.jpg" alt=""
-        class="hide" id="one-pic">
-    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1593911620476&di=a4a4b04755084a0a22b56f8a7d26ecee&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_pic%2F00%2F95%2F19%2F2356f2da6460a40.jpg"
-        alt="" class="hide" id="two-pic">
-    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1593911620476&di=3b82de25010aba815b65eafc9eac47d3&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F95%2F17%2F4656f2d98fa7049.jpg"
-        alt="" class="hide" id="three-pic">
 
-    <ul id="clicklist">
-        <li><span>apple</span>
-            <input type="text"></li>
-        <li><span>xiaomi</span>
-            <input type="text"></li>
-        <li><span>huawei</span>
-            <input type="text"></li>
-    </ul>
+    <div class="container">
 
+        <div class="row">
 
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div id="panel1" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Title</h3>
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div id="panel2" class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Title</h3>
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div id="panel3" class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Title</h3>
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script>
-        var numOne = document.getElementById("numOne");
-        var numTwo = document.getElementById("numTwo");
-        var sum = document.getElementById("sum");
+        $(function () {
 
-        var one = document.getElementById("one");
-        var two = document.getElementById("two");
-        var three = document.getElementById("three");
+            $('#left').on('cilck', function () {
+                $('#panel1').fadeOut(200);
+            })
+        })
 
-
-
-        numOne.addEventListener("input", add);
-        numTwo.addEventListener("input", add);
-
-        function add() {
-            var one = parseFloat(numOne.value) || 0;
-            var two = parseFloat(numTwo.value) || 0;
-            sum.innerHTML = "your number is:" + (one + two);
-        }
-
-        one.addEventListener("click", picHide);
-        two.addEventListener("click", picHide);
-        three.addEventListener("click", picHide);
-
-        function picHide() {
-
-            var allImages = document.querySelectorAll("img");
-            for (var i = 0; i < allImages.length; i++) {
-                allImages[i].className = "hide";
-            }
-            var picId = this.attributes["data-img"].value;
-            var pic = document.getElementById(picId);
-            if (pic.className === "hide") {
-                pic.className = "";
-            } else {
-                pic.className = "hide";
-            }
-        }
     </script>
 </body>
 
