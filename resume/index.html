@@ -61,13 +61,13 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script>
-        $(function () {
-
-            $('#left').on('cilck', function () {
-                $('#panel1').fadeOut(200);
+        $(document).ready(function () {
+            $(function () {
+                $('#left').on('click', function () {
+                    $('#panel1').hide(300);
+                })
             })
         })
-
     </script>
 </body>
 
