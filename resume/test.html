@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=">
-    <title>Listener study</title>
+    <title>jQuery study</title>
     <style>
         body .container {
             margin: 10px 10px;
@@ -153,9 +153,7 @@
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-1.12.4.js"
-        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <script>
         //先加载页面元素再加载js
         $(document).ready(function () {
@@ -187,7 +185,8 @@
             });
             //选项卡功能实现
             $('.tab-panels .tabs li').on('click', function () {
-                $('.tab-panels .tabs li.active').removeClass('active');
+                var $panel = $(this).closest('.tab-panels');
+                $panel.find('.tabs li.active').removeClass('active');
                 $(this).addClass('active');
 
                 //找出要显示的面板
@@ -195,7 +194,7 @@
                 //获取this【$(this)】的属性
 
                 //隐藏当前面板[1回调地狱]
-                $('.tab-panels .panel.active').slideUp(300, showNextPanel);
+                $panel.find('.panel.active').slideUp(300, showNextPanel);
 
                 //show next panel
                 function showNextPanel() {
@@ -209,9 +208,12 @@
                     });
                 }
             });
+
+
         });
 
     </script>
+
 </body>
 
 </html>

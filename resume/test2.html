@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery ajax</title>
+    <style>
+        .container.ajax ul {
+            padding: 0;
+        }
+
+        .container.ajax ul li {
+            list-style-type: none;
+            background: #fff333;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- get/post/DELATE/put请求 -->
+    <div class="container ajax">
+        <h1>jQuery Ajax Tutorial</h1>
+        <h2>Coffee Orders</h2>
+        <ul id="orders">
+            <li>name: jhon,drink:coffee</li>
+        </ul>
+
+        <h4>Add a coffee order</h4>
+        <p>name: <input type="text" id="name"></p>
+        <p>drink: <input type="text" id="drink"></p>
+        <button id="add-order">add</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var $orders = $("#orders");
+            var $name = $('#name');
+            var $drink = $('#drink');
+            $.ajax({
+                type: 'GET',
+                url: '/api/orders',
+                success: function (orders) {
+                    $.each(orders, function (i, order) {
+                        $orders.append('<li>name: ' + order.name + ',drink: ' + order.drink + '</li>');
+                    });
+                },
+                error: function () {
+                    alert('error!');
+                }
+            });
+            $('#add-order').on('click', function () {
+                var order = {
+                    name: $name.val(),
+                    drink: $drink.val(),
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/orders',
+                    data: order,
+                    success: function (newOrder) {
+                        $orders.append('<li>name: ' + newOrder.name + ',drink: ' + newOrder.drink + '</li>');
+                    },
+                    error: function () {
+                        alert('add error!');
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

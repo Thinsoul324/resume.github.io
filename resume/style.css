@@ -1,19 +1,57 @@
-div img{
-  width:30px ;
-  margin:5px 10px 5px 0;
+
+/* 全局样式 */
+*{
+  background: #fff;
+  color: #000;
 }
-div p{
-  padding: 10px 5px 0 10px;
+
+
+/* 标题样式 */
+body div.container-fluid.col-sm-6.left div.row.title div.col-sm-4.col-xs-4 {
+  color: #4E7282;
+  text-shadow: 0px 1px 3px #BFBFBF;
 }
 div div div.col-sm-4 col-xs-4 h1{
   margin-top: 0;
 }
 
-div div.page-header{
-  margin-top: 10%;
-  padding: 5% 10% 5% 10%;
-  background-color:yellow
+
+/* 个人信息样式 */
+body div.container-fluid.col-sm-6.left div.page-header{
+  border-top: 2px solid #4E7282;
+  border-left: 2px solid #4E7282;
+  margin: 0;
+  padding: 5% 2% 5% 4%;
+  box-shadow: 2px 2px 5px #BFBFBF inset;
 }
-div.page-header div.row div.col-xs-6 p{
-background: aliceblue;
+body div.container-fluid.col-sm-6.left div.page-header div.row div p{
+  padding: 10px 5px 0 10px;
+  
+  color: #000000;
 }
+/* body div.container-fluid.col-sm-6.left div.page-header.first{
+  margin-top: 5%;
+} */
+
+/* 图标样式 */
+div.col-sm-4.col-xs-4 i{
+  margin: 5px;
+  color:#C19F67 ;
+  font-size: 2em;
+}
+
+/* 旋转动画 */
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  50% {
+      transform: rotate(180deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
